@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//what the fuck is this
+
 string globalTime("");
+
 void setTime(){
   bool done = false;
   while(!done){
@@ -18,14 +19,11 @@ void setTime(){
           break;
         }
       }
-
-
     }
   }
 }
 
 int main(){
   setTime();
-
   return 0;
 }
