@@ -2,7 +2,23 @@
 #include <string>
 using namespace std;
 
+string globalTime("");
+int setTime(){
+  string time;
+  cout << "Please enter a starting time." << endl
+  cin >> time << endl;
+  if (length(time) <= 5){
+    for(auto c : time){
+      if (c == ":"){
+        break
+      }
+    }
+    globalTime = time;
+  }
+}
+
 int main(){
-  std::cout << "Hello World!";
+  setTime()
+  cout << globalTime << endl;
   return 0;
 }
