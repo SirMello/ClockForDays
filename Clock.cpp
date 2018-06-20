@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+//what the fuck is this
 string globalTime("");
 int setTime(){
   string time;
