@@ -3,22 +3,29 @@
 using namespace std;
 
 string globalTime("");
-int setTime(){
-  string time;
-  cout << "Please enter a starting time." << endl
-  cin >> time << endl;
-  if (length(time) <= 5){
-    for(auto c : time){
-      if (c == ":"){
-        break
+void setTime(){
+  bool done = false;
+  while(!done){
+    string time;
+    cout << "Please enter a starting time. Press ENTER when done." << endl;
+    cin >> time;
+    if (time.length() <= 5){
+      for(auto c = time.begin(); c != time.end(); ++c){
+        if (*c == ':'){
+          globalTime = time;
+          done = true;
+          cout << "Starting Time: " << globalTime << endl;
+          break;
+        }
       }
+
+
     }
-    globalTime = time;
   }
 }
 
 int main(){
-  setTime()
-  cout << globalTime << endl;
+  setTime();
+
   return 0;
 }
