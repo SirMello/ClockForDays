@@ -14,7 +14,7 @@ int setHour(Clock clc){
 }
 
 int setMinute(Clock clc){
-  while (clc.minute > 59) {
+  while (clc.minute > 59){
     cout << "Input the current minute." << endl;
     cin >> clc.minute;
   }
