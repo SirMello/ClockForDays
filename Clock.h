@@ -4,5 +4,5 @@ class Clock {
 public:
   int hour = 25;
   int minute = 60;
-  int second;
+  int second = 0;
 };

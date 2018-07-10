@@ -17,12 +17,7 @@ int setHour(Clock clc){
     cout << "Input the current hour." << endl;
     cin >> clc.hour;
   }
-}
-
-
-void showTime(Clock clc){
-  string time;
-  time = clc.hour + ":" + clc.minute + ":" + clc.seconds;
+  return clc.hour;
 }
 
 
@@ -31,32 +26,56 @@ int setMinute(Clock clc){
     cout << "Input the current minute." << endl;
     cin >> clc.minute;
   }
+  return clc.minute;
 }
 
+void showTime(Clock clc){
+  string time;
+  if (to_string(clc.hour).length() == 1){
+    time = "0" + to_string(clc.hour);
+  } else {
+    time = to_string(clc.hour);
+  }
+
+  if (to_string(clc.minute).length() == 1){
+    time += ": 0" + to_string(clc.minute);
+  } else {
+    time += ": " + to_string(clc.minute);
+  }
+
+  if (to_string(clc.second).length() == 1){
+    time += ": 0" + to_string(clc.second);
+  } else {
+    time += ": " + to_string(clc.second);
+  }
+
+  cout << time << endl;
+}
 
 int main(){
   Clock clock;
   bool done = false;
-  setHour(clock);
-  setMinute(clock);
+  clock.hour = setHour(clock);
+  clock.minute = setMinute(clock);
 
   while (!done){
-    sleep(10);
+    sleep(1000);
     ++clock.second;
-    if (clock.second == 60){
+    if (clock.second >= 60){
       clock.second = 0;
       ++clock.minute;
     }
-    if (clock.minute == 60){
+    if (clock.minute >= 60){
         clock.minute = 0;
         ++clock.hour;
       }
 
-    if (clock.hour == 25){
+    if (clock.hour >= 25){
       clock.hour = 0;
       clock.minute = 0;
       clock.second = 0;
       }
+    showTime(clock);
     }
 
 
