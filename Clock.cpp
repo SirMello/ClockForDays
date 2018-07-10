@@ -6,7 +6,7 @@ using namespace std;
 string globalTime("");
 
 void setTime(){
-  
+
 }
 
 int main(){
