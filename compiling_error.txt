@@ -1,0 +1,25 @@
+In file included from /Users/ahmedimana/ClockForDays/main.cpp:5:
+/Users/ahmedimana/ClockForDays/clock.h:5:12: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+  int hour = 25;
+           ^
+/Users/ahmedimana/ClockForDays/clock.h:6:14: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+  int minute = 60;
+             ^
+/Users/ahmedimana/ClockForDays/main.cpp:20:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+/Users/ahmedimana/ClockForDays/main.cpp:25:19: warning: adding 'int' to a string does not append to the string [-Wstring-plus-int]
+  time = clc.hour + ":" + clc.minute + ":" + clc.seconds;
+         ~~~~~~~~~^~~~~
+/Users/ahmedimana/ClockForDays/main.cpp:25:19: note: use array indexing to silence this warning
+/Users/ahmedimana/ClockForDays/main.cpp:25:38: error: invalid operands to binary expression ('const char *' and 'const char *')
+  time = clc.hour + ":" + clc.minute + ":" + clc.seconds;
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~
+/Users/ahmedimana/ClockForDays/main.cpp:25:50: error: no member named 'seconds' in 'Clock'; did you mean 'second'?
+  time = clc.hour + ":" + clc.minute + ":" + clc.seconds;
+                                                 ^~~~~~~
+                                                 second
+/Users/ahmedimana/ClockForDays/clock.h:7:7: note: 'second' declared here
+  int second;
+      ^
+4 warnings and 2 errors generated.
