@@ -9,7 +9,6 @@ void sleep(int x){
 }
 
 using namespace std;
-
 int setHour(Clock clc){
   while (clc.hour > 24){
     cout << "Input the current hour." << endl;
@@ -18,6 +17,12 @@ int setHour(Clock clc){
   return clc.hour;
 }
 
+void clearScreen(){
+  int n;
+  for (n = 0; n < 10; ++n){
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+  }
+}
 
 int setMinute(Clock clc){
   while (clc.minute > 59){
@@ -47,7 +52,8 @@ void showTime(Clock clc){
     time += ": " + to_string(clc.second);
   }
 
-  cout << time << endl;
+  clearScreen();
+  cout << time << flush;
 }
 
 int main(){
@@ -57,7 +63,7 @@ int main(){
   clock.minute = setMinute(clock);
 
   while (!done){
-    sleep(1000);
+    sleep(ONE_SECOND);
     ++clock.second;
     if (clock.second >= 60){
       clock.second = 0;
