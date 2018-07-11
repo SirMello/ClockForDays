@@ -8,8 +8,6 @@ void sleep(int x){
   std::this_thread::sleep_for(std::chrono::milliseconds(x));
 }
 
-
-
 using namespace std;
 
 int setHour(Clock clc){
