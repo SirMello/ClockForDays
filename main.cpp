@@ -4,11 +4,8 @@
 #include <thread>
 #include "clock.h"
 
-// Included "using namespace std" to enchance readability
-using namespace std;
-
 // Global ONE_SECOND variable for simpler time manangement
-int ONE_SECOND = 1000;
+int ONE_SECOND = 950;
 
 // Waiting function
 void sleep(int x){
