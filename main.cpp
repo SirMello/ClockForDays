@@ -4,12 +4,13 @@
 #include <thread>
 #include "clock.h"
 
+using namespace std;
+
+int ONE_SECOND = 1000;
+
 void sleep(int x){
   std::this_thread::sleep_for(std::chrono::milliseconds(x));
 }
-int ONE_SECOND = 1000;
-
-using namespace std;
 
 int main(){
   Clock clock;
